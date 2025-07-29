@@ -112,12 +112,12 @@ const WarrantyTracker = () => {
     if (newProduct.name && newProduct.purchase_date) {
       try {
         const productData = {
-          name: newProduct.name,
-          category: newProduct.category,
-          purchase_date: newProduct.purchase_date,
-          warranty_expiry: newProduct.warranty_expiry || newProduct.purchase_date,
-          user_id: '00000000-0000-0000-0000-000000000000'
-        };
+  name: newProduct.name,
+  category: newProduct.category,
+  purchase_date: newProduct.purchase_date,
+  warranty_expiry: newProduct.warranty_expiry || newProduct.purchase_date
+  // user_id removed - we'll add proper auth later
+};
 
         const { data: product, error } = await supabase
           .from('products')
